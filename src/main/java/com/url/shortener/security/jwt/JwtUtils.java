@@ -24,7 +24,7 @@ public class JwtUtils {
     @Value("${jwt.expiration}")
     private int jwtExpirationInMinutes;
 
-    // Authorization -> Bearer<Token>
+    // Authorization -> Bearer <Token>
 
     public String getJwtFromHeader(HttpServletRequest request) {
 

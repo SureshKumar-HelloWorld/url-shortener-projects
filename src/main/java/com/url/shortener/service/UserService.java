@@ -36,7 +36,7 @@ public class UserService {
         return new JwtAuthenticationResponse(jwt);
     }
 
-    public User findByusername(String name) {
+    public User findByUsername(String name) {
         return userRepository.findByUsername(name).orElseThrow(
                 () -> new UsernameNotFoundException("User Not found with username: " + name)
         );
