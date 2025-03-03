@@ -1,9 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import TextField from './TextField';
+import { Link, useNavigate } from 'react-router-dom';
+import api from '../api/api';
+import toast from 'react-hot-toast';
 
 const RegisterPage = () => {
-    const {
+
+  const navigate = useNavigate();
+
+  const [loader,setLoader]= useState(false);
+    
+  const {
         register,
         handleSubmit,
         reset,
@@ -16,13 +24,25 @@ const RegisterPage = () => {
         },
           mode:"onTouched",  
     });
+   
     const registerHandler = async (data) => {
-        // setLoader(true);
-        // try{
-        //     const {data:response}=await api
-        // }
-
+        setLoader(true);
+         try {
+          const {data : response}= await api.post(
+            "/api/auth/public/register",
+            data
+          ); 
+          reset();
+          navigate("/login");
+          toast.success("Registration successful!")
+         } catch (error) {
+          console.log(error);
+          toast.error("Registration Failed!")
+         }finally {
+          setLoader(false);
     }
+  };
+
   return (
     <div className='min-h-[calc(100vh-4rem)] flex items-center justify-center'>
         <form onSubmit={handleSubmit(registerHandler)}
@@ -66,6 +86,20 @@ const RegisterPage = () => {
                 errors={errors}
                 />
             </div>
+            <button 
+             disabled={loader}
+            type="submit" 
+            className='bg-customRed font-semibold text-white bg-custom-gradient w-full py-2 hover:text-slate-400 transition-colors duration-100 rounded-sm my-3'>
+              {loader ? "Loading...":"Register"}
+            </button>
+            <p className='text-center text-sm text-slate-700 mt-6'>
+              Already have an account?
+              <Link
+                className='font-semibold underline hover:text-black'
+                to='/login'>
+                  <span className='text-btnColor'> Login</span>
+                  </Link>
+            </p>
           </form>
         </div>
   )
