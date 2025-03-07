@@ -1,1 +1,1 @@
-# URL Shortener Project Using Spring Boot And React Development
+# URL Shortener Project Using Spring Boot And React
