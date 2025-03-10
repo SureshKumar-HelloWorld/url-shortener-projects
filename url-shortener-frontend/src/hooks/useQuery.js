@@ -5,7 +5,7 @@ export const useFetchMyShortUrls = (token, onError) => {
     return useQuery("my-shortenurls",
          async () => {
             return await api.get(
-                "/api/urls/myUrls",
+                "/api/urls/myurls",
             {
                 headers: {
                     "Content-Type": "application/json",
