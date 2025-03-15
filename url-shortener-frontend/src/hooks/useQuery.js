@@ -35,7 +35,7 @@ export const useFetchMyShortUrls = (token, onError) => {
 export const useFetchTotalClicks = (token , onError) => {
 return useQuery("url-totalclick", 
      async () => {
-    return await api.get("api/urls/totalClicks?startDate=2025-03-11&endDate=2025-03-12", 
+    return await api.get("api/urls/totalClicks?startDate=2025-03-15&endDate=2025-03-16", 
         {
             headers : {
                 "Content-Type":"application/json",
