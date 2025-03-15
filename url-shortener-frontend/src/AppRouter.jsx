@@ -13,14 +13,17 @@ import ErrorPage from "./components/ErrorPage";
 
 
 const AppRouter = () => {
+    const hideHeaderFooter = location.pathname.startsWith("/s");
 
     return (
         <>
-        <NavBar/>
+       {!hideHeaderFooter && <NavBar /> }
         <Toaster position='bottom-center'/>
         <Routes>
           <Route path='/' element={<LandingPage />}/>
           <Route path='/about' element={<AboutPage />}/>
+          <Route path="/s/:url" element={<ShortenUrlPage />} />
+          
 
 
           <Route path='/register' element={<PrivateRoute publicPage={true}><RegisterPage /></PrivateRoute>}/>
@@ -34,7 +37,7 @@ const AppRouter = () => {
           <Route path='*' element={<ErrorPage message="We can't seem to find the page you're looking for" />} />
 
         </Routes>
-        <Footer/>
+        {!hideHeaderFooter && <Footer />}
         </>
   
     );
