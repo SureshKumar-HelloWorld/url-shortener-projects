@@ -67,7 +67,7 @@ mvn spring-boot:run
 
 3. API will be available at http://localhost:8080
 
-##Frontend Setup
+## Frontend Setup
 
 1.Navigate to the frontend directory:
 
@@ -103,10 +103,10 @@ Response:
 
 ## Redirect to Original URL
 
-###GET /s/{shortCode}
+### GET /s/{shortCode}
 Redirects to the original URL.
 
-##Future Enhancements
+## Future Enhancements
 
 - User authentication
 
