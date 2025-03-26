@@ -59,7 +59,7 @@
 1. Clone the repository:
 
 git clone https://github.com/SureshKumar-HelloWorld/url-shortener-projects.git
-cd url-shortener/backend
+cd url-shortener-sb
 
 2. Build and run the Spring Boot application:
 
@@ -71,7 +71,7 @@ mvn spring-boot:run
 
 1.Navigate to the frontend directory:
 
-cd ../frontend
+cd ../url-shortener-frontend
 
 2.Install dependencies:
 
@@ -83,16 +83,16 @@ npm run dev
 
 4.Open http://localhost:5173 (or as per Vite configuration) in the browser.
 
-##API Endpoints
+## API Endpoints
 
-###Create a Short URL
+### Create a Short URL
 
-####POST /api/shorten
+#### POST /api/shorten
 
-#####Request Body:
+##### Request Body:
 
 {
-  "longUrl": "https://example.com/long-url"
+  "longUrl": "https://example.com"
 }
 
 Response:
@@ -101,21 +101,21 @@ Response:
   "shortUrl": "http://localhost:8080/s/abc123"
 }
 
-Redirect to Original URL
+## Redirect to Original URL
 
-GET /s/{shortCode}
+###GET /s/{shortCode}
 Redirects to the original URL.
 
-Future Enhancements
+##Future Enhancements
 
-User authentication
+- User authentication
 
-Custom short URLs
+- Custom short URLs
 
-Analytics (click tracking)
+- Analytics (click tracking)
 
-Expiration time for short links
+- Expiration time for short links
 
-License
+## License
 
 This project is licensed under the MIT License.
