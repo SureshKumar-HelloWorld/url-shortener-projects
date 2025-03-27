@@ -18,7 +18,7 @@
 
 ### Backend (Spring Boot)
 
-- Java 17+
+- Java 21+
 
 - Spring Boot
 
@@ -46,7 +46,7 @@
 
 ### Prerequisites
 
-- Java 17+
+- Java 21+
 
 - Node.js (for React frontend)
 
